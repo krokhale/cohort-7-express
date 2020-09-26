@@ -18,8 +18,34 @@ ListItem.init({
     modelName: 'ListItem', // We need to choose the model name
 });
 
+class Question extends Model {
+}
+
+Question.init({
+    // Model attributes are defined here
+    questionText: {
+        type: 'LONGTEXT',
+        // allowNull: false
+    },
+    answerOne: {
+        type: 'LONGTEXT',
+        // allowNull: false
+    },
+    answerTwo: {
+        type: 'LONGTEXT',
+        // allowNull: false
+    },
+    category: {
+        type: 'LONGTEXT',
+    }
+}, {
+    // Other model options go here
+    sequelize, // We need to pass the connection instance
+    modelName: 'Question', // We need to choose the model name
+});
+
 sequelize.sync({alter: true});
 
 // export default sequelize
-module.exports = {ListItem};
+module.exports = {ListItem, Question};
 
